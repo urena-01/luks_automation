@@ -3,4 +3,4 @@ nbde_client_bindings:
   - device: /dev/vda2
     encryption_password: "{{ vault_password }}"
     servers:
-      - http://rhel8.6-node1.example.com
+      - "{{ tang_server }}"
