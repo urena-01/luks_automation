@@ -1,6 +1,5 @@
 collections:
-  - name: ansible.posix
-  - name: ansible.core
+  - name: ansible.posix  
 roles:
   - name: rhel-system-roles
   
