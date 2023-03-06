@@ -1,0 +1,10 @@
+all:
+  children:
+    nbde-servers:
+      hosts:
+        node1:
+    nbde-clients:
+      hosts:
+        node2:
+        node3:
+        node4:
