@@ -1,0 +1,7 @@
+---
+- name: post setup sanity check 
+  hosts:
+    - name: check tang server
+        check and register/output 
+    - name: check clevis clients
+      check and register/output
