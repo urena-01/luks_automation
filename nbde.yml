@@ -1,0 +1,29 @@
+---
+- name: Open firewall for Tang
+  hosts: nbde-servers
+  tasks:
+    - name: open firewall
+      ansible.posix.firewalld:
+        port: 80/tcp
+        permanent: true
+        immediate: true
+        state: enabled
+
+- name: Deploy NBDE Tang servers
+  hosts: nbde-servers
+  roles:
+    - rhel-system-roles.nbde_server
+
+- name: Create /etc/dracut.conf.d/nbde_client.conf
+  hosts: nbde-clients
+  tasks:
+    - ansible.builtin.copy:
+        content: 'kernel_cmdline="rd.neednet=1"'
+        dest: /etc/dracut.conf.d/nbde_client.conf
+        owner: root
+        mode: u=rw
+
+- name: Deploy NBDE Clevis clients
+  hosts: nbde-clients
+  roles:
+    - rhel-system-roles.nbde_client
