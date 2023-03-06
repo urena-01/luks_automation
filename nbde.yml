@@ -9,11 +9,7 @@
         immediate: true
         state: enabled
         
-    - name: add rhel system roles
-      ansible.builtin.yum:
-        name: rhel-system-roles
-        state: present
-
+   
 - name: Deploy NBDE Tang servers
   hosts: nbde-servers
   roles:
