@@ -1,0 +1,12 @@
+- name: Create /etc/dracut.conf.d/nbde_client.conf
+  hosts: nbde-clients # need to variableize this for survey 
+  tasks:
+    - ansible.builtin.copy:
+        content: 'kernel_cmdline="rd.neednet=1"'
+        dest: /etc/dracut.conf.d/nbde_client.conf
+        owner: root
+        mode: u=rw
+
+    - name: Deploy NBDE Clevis clients
+      roles:
+        - rhel-system-roles.nbde_client
