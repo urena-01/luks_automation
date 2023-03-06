@@ -1,0 +1,14 @@
+---
+- name: Open firewall for Tang
+  hosts: nbde-servers
+  tasks:
+    - name: open firewall
+      ansible.posix.firewalld:
+        port: 80/tcp
+        permanent: true
+        immediate: true
+        state: enabled
+           
+    - name: Deploy NBDE Tang servers
+      roles:
+        - rhel-system-roles.nbde_server
