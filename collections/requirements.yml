@@ -1,6 +1,4 @@
 ---
 collections:
   - name: ansible.posix 
-  - name: redhat.rhel_system_roles
-roles:
-  - name: redhat.rhel_system_roles 
+  - name: linux_system_roles
