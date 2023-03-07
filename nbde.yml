@@ -11,7 +11,7 @@
            
     - name: Deploy NBDE Tang servers
       roles:
-        - rhel-system-roles.nbde_server
+        - redhat.rhel-system-roles.nbde_server
         
 - name: Create /etc/dracut.conf.d/nbde_client.conf
   hosts: nbde-clients # need to variableize this for survey 
@@ -24,4 +24,4 @@
 
     - name: Deploy NBDE Clevis clients
       roles:
-        - rhel-system-roles.nbde_client
+        - redhat.rhel-system-roles.nbde_client
