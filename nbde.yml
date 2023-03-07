@@ -8,13 +8,14 @@
         permanent: true
         immediate: true
         state: enabled
-           
-    - name: Deploy NBDE Tang servers
-      roles:
-        - redhat.rhel-system-roles.nbde_server
-        
+
+- name: Deploy NBDE Tang servers
+  hosts: nbde-servers
+  roles:
+    - rhel-system-roles.nbde_server
+
 - name: Create /etc/dracut.conf.d/nbde_client.conf
-  hosts: nbde-clients # need to variableize this for survey 
+  hosts: nbde-clients
   tasks:
     - ansible.builtin.copy:
         content: 'kernel_cmdline="rd.neednet=1"'
@@ -22,6 +23,7 @@
         owner: root
         mode: u=rw
 
-    - name: Deploy NBDE Clevis clients
-      roles:
-        - redhat.rhel-system-roles.nbde_client
+- name: Deploy NBDE Clevis clients
+  hosts: nbde-clients
+  roles:
+    - rhel-system-roles.nbde_client
