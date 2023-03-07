@@ -12,7 +12,7 @@
 - name: Deploy NBDE Tang servers
   hosts: nbde-servers
   roles:
-    - linux_system_roles.nbde_server
+    - fedora.linux_system_roles.nbde_server
 
 - name: Create /etc/dracut.conf.d/nbde_client.conf
   hosts: nbde-clients
@@ -26,4 +26,4 @@
 - name: Deploy NBDE Clevis clients
   hosts: nbde-clients
   roles:
-    - linux_system_roles.nbde_client
+    - fedora.linux_system_roles.nbde_client
