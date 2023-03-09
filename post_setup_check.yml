@@ -3,5 +3,10 @@
   hosts:
     - name: check tang server
         check and register/output 
+        #need to ansiblize the following cmd
+        #ssh <tang server> sudo systemctl status tangd.socket
     - name: check clevis clients
       check and register/output
+      # need to ansibllize 
+      # ssh <client> sudo clevis luks list -d /dev/vda2
+      # loop and register response 
