@@ -10,3 +10,6 @@
       # need to ansibllize 
       # ssh <client> sudo clevis luks list -d /dev/vda2
       # loop and register response 
+#ansible.builtin.service_facts module – Return service state information as fact data 
+#or
+#ansible.builtin.systemd module – Manage systemd units
