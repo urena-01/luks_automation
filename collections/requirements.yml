@@ -1,5 +1,5 @@
 ---
 collections:
   - name: ansible.posix 
-  - name: redhat.rhel_system_roles
+  - name: redhat.rhel_system_roles.nbde_server
   - name: fedora.linux_system_roles
